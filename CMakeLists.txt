@@ -58,16 +58,17 @@ include_directories(
     ${OPENGL_INCLUDE_DIR}
     ${GLUT_DIR}
     ${GLU_DIR}
+    ${CUDA_INCLUDE_DIRS}
+    ${CUDA_TOOLKIT_ROOT_DIR}/samples/common/inc
     )
+#cuda_include_directories(${CUDA_TOOLKIT_ROOT_DIR}/samples/common/inc)
 
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY lib)
-
-include_directories(${CUDA_TOOLKIT_ROOT_DIR}/samples/common/inc)
-cuda_include_directories(${CUDA_TOOLKIT_ROOT_DIR}/samples/common/inc)
 
 set(COMMON_LIB
     ${OpenCV_LIBS}
     ${EIGEN3_LIBS}
+    ${CUDA_LIBRARIES}
     #${Pangolin_LIBRARIES}
     #nvToolsExt
     ${OPENGL_LIBRARIES}
